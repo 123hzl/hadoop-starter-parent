@@ -7,10 +7,14 @@
     <groupId>com.hzl.cloud</groupId>
     <artifactId>hadoop-starter-parent</artifactId>
     <version>1.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
 
     <properties>
         <java.version>1.8</java.version>
-        <redisson>3.11.3</redisson>
+        <redisson>3.11.5</redisson>
+        <spring-boot.version>2.1.9.RELEASE</spring-boot.version>
+        <spring-cloud.version>Greenwich.SR3</spring-cloud.version>
+        <nacos.version>2.1.0.RELEASE</nacos.version>
     </properties>
 
     <!--<modules>-->
@@ -84,6 +88,14 @@
         </pluginRepository>
     </pluginRepositories>
 
+    <dependencies>
+        <!-- optional介绍https://blog.csdn.net/lovejj1994/article/details/80283240-->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <optional>true</optional>
+        </dependency>
+    </dependencies>
 
     <dependencyManagement>
         <!--https://blog.csdn.net/qq_36838191/article/details/90648774-->
@@ -97,6 +109,32 @@
                 <version>${redisson}</version>
             </dependency>
             <!--starter引用结束-->
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>${spring-cloud.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>${spring-boot.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <!-- https://mvnrepository.com/artifact/com.alibaba.cloud/spring-cloud-alibaba-dependencies -->
+            <dependency>
+                <groupId>com.alibaba.cloud</groupId>
+                <artifactId>spring-cloud-alibaba-dependencies</artifactId>
+                <version>${nacos.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+
 
         </dependencies>
     </dependencyManagement>
