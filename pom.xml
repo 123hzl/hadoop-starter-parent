@@ -12,15 +12,7 @@
     <properties>
         <java.version>1.8</java.version>
         <redisson>3.11.5</redisson>
-        <spring-boot.version>2.2.5.RELEASE</spring-boot.version>
-        <spring-cloud.version>Hoxton.SR3</spring-cloud.version>
-        <nacos.version>2.2.1.RELEASE</nacos.version>
-        <mybatis>2.1.1</mybatis>
-        <mysql>8.0.18</mysql>
-        <pagehelper>1.2.13</pagehelper>
-        <commons-lang3>3.9</commons-lang3>
-        <tk.mybatis>2.1.5</tk.mybatis>
-        <druid>1.1.21</druid>
+        <spring-boot.version>2.5.0</spring-boot.version>
     </properties>
 
     <!--<modules>-->
@@ -116,31 +108,12 @@
             </dependency>
             <!--starter引用结束-->
             <dependency>
-                <groupId>org.springframework.cloud</groupId>
-                <artifactId>spring-cloud-dependencies</artifactId>
-                <version>${spring-cloud.version}</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
-
-            <dependency>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-dependencies</artifactId>
                 <version>${spring-boot.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
-
-            <!-- https://mvnrepository.com/artifact/com.alibaba.cloud/spring-cloud-alibaba-dependencies -->
-            <dependency>
-                <groupId>com.alibaba.cloud</groupId>
-                <artifactId>spring-cloud-alibaba-dependencies</artifactId>
-                <version>${nacos.version}</version>
-                <type>pom</type>
-                <scope>import</scope>
-            </dependency>
-
-
 
         </dependencies>
     </dependencyManagement>
